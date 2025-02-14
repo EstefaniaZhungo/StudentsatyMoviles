@@ -1,6 +1,5 @@
 package com.tefa.studentstayo.model;
 
-import java.util.Date;
 
 public class DetalleFactura {
     private Long idDetalleFac;

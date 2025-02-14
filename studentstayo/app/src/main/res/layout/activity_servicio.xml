@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F7F7F7"> <!-- Fondo más claro como en el diseño anterior -->
+    android:background="#F7F7F7">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -92,7 +92,7 @@
             app:icon="@drawable/icons8_logout_rounded_25"
             app:iconTint="#F7000000" />
     </LinearLayout>
-</LinearLayout> <!-- Aquí cierra el LinearLayout principal -->
-    </RelativeLayout> <!-- Aquí cierra el RelativeLayout -->
+</LinearLayout>
+    </RelativeLayout>
 
 

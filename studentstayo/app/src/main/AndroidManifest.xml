@@ -21,6 +21,25 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".Login"
+            android:exported="false" />
+
+        <activity android:name=".PantallaPerfilUsuario"
+            android:exported="false" />
+
+        <activity android:name=".PantallaPrincipal"
+            android:exported="false" />
+
+        <activity android:name=".PantallaReservar"
+            android:exported="false" />
+
+        <activity android:name=".Registrar"
+            android:exported="false" />
+
+        <activity android:name=".Servicio"
+            android:exported="false" />
+
     </application>
 
 </manifest>
