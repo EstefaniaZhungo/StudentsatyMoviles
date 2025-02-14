@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:background="@android:color/white"
+    android:padding="24dp"
+    tools:context=".PantallaPerfilUsuario">
+
+    <!-- Título de Perfil -->
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="PERFIL"
+        android:textAlignment="center"
+        android:textSize="48sp"
+        android:textStyle="bold"
+        android:textColor="#056688" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="30dp" />
+
+    <!-- Campo Teléfono -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        app:boxBackgroundMode="filled"
+        app:boxBackgroundColor="#F1F1F1"
+        app:boxStrokeColor="#056688"
+        app:hintAnimationEnabled="true">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/txtTelefono"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:hint="Teléfono"
+            android:textColor="#333333"
+            android:textColorHint="#888888"
+            android:padding="12dp"
+            android:inputType="phone" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="15dp" />
+
+    <!-- Campos de Nombre y Segundo Nombre -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_marginBottom="15dp">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:boxBackgroundMode="filled"
+            app:boxBackgroundColor="#F1F1F1"
+            app:boxStrokeColor="#056688"
+            app:hintAnimationEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txtNombre"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:hint="Nombre"
+                android:textColor="#333333"
+                android:textColorHint="#888888"
+                android:padding="12dp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Space android:layout_width="15dp"  android:layout_height="2dp"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:boxBackgroundMode="filled"
+            app:boxBackgroundColor="#F1F1F1"
+            app:boxStrokeColor="#056688"
+            app:hintAnimationEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txtNombre2"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:hint="Segundo Nombre"
+                android:textColor="#333333"
+                android:textColorHint="#888888"
+                android:padding="12dp" />
+        </com.google.android.material.textfield.TextInputLayout>
+    </LinearLayout>
+
+    <!-- Campos de Apellido y Segundo Apellido -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_marginBottom="15dp">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:boxBackgroundMode="filled"
+            app:boxBackgroundColor="#F1F1F1"
+            app:boxStrokeColor="#056688"
+            app:hintAnimationEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txtApellido"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:hint="Apellido"
+                android:textColor="#333333"
+                android:textColorHint="#888888"
+                android:padding="12dp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Space android:layout_width="15dp"  android:layout_height="2dp"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:boxBackgroundMode="filled"
+            app:boxBackgroundColor="#F1F1F1"
+            app:boxStrokeColor="#056688"
+            app:hintAnimationEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txtApellido2"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:hint="Segundo Apellido"
+                android:textColor="#333333"
+                android:textColorHint="#888888"
+                android:padding="12dp" />
+        </com.google.android.material.textfield.TextInputLayout>
+    </LinearLayout>
+
+    <!-- Campo Contraseña -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        app:boxBackgroundMode="filled"
+        app:boxBackgroundColor="#F1F1F1"
+        app:boxStrokeColor="#056688"
+        app:hintAnimationEnabled="true">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/pasword"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:hint="Contraseña"
+            android:textColor="#333333"
+            android:textColorHint="#888888"
+            android:padding="12dp"
+            android:inputType="textPassword" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Botón Actualizar -->
+    <Button
+        android:id="@+id/btnEditar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#056688"
+        android:text="Actualizar"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginTop="20dp"
+        android:cornerRadius="50dp" />
+
+</LinearLayout>

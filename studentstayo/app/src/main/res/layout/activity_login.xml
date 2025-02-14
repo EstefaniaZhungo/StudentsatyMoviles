@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    tools:context=".Login">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <!-- Logo -->
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginBottom="40dp"
+            app:srcCompat="@drawable/logoprincipal"
+            android:elevation="8dp"
+            android:contentDescription="Logo" />
+
+        <!-- Campo de Email -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            app:boxBackgroundMode="filled"
+            app:boxStrokeColor="#056688"
+            app:hintAnimationEnabled="true"
+            app:boxBackgroundColor="#F0F0F0">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/emailLogin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Correo Electrónico"
+                android:textSize="16sp"
+                android:padding="12dp"
+                android:textColor="#333333"
+                android:textColorHint="#888888"
+                android:inputType="textEmailAddress"
+                android:importantForAccessibility="yes" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Campo de Contraseña -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp"
+            app:boxBackgroundMode="filled"
+            app:boxStrokeColor="#056688"
+            app:hintAnimationEnabled="true"
+            app:endIconMode="password_toggle"
+            app:boxBackgroundColor="#F0F0F0">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/paswordLogin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Contraseña"
+                android:textSize="16sp"
+                android:inputType="textPassword"
+                android:padding="12dp"
+                android:textColor="#333333"
+                android:textColorHint="#888888"
+                android:importantForAccessibility="yes" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Botón de Iniciar Sesión -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonLogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:backgroundTint="#056688"
+            android:text="Iniciar Sesión"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:cornerRadius="50dp"
+            app:rippleColor="@color/white"
+            android:elevation="4dp"
+            android:importantForAccessibility="yes" />
+
+        <!-- Texto de Registro -->
+        <TextView
+            android:id="@+id/textViewLo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="¿No tienes cuenta? Registrarse"
+            android:textColor="#056688"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:paddingTop="10dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:importantForAccessibility="yes" />
+
+    </LinearLayout>
+</ScrollView>
+
