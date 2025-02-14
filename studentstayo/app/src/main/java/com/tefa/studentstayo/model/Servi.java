@@ -1,4 +1,4 @@
-package com.ista.zhotel.model;
+package com.tefa.studentstayo.model;
 
 public class Servi {
     private long idTipo_servicio;

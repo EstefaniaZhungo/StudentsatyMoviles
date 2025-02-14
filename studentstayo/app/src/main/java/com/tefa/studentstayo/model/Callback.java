@@ -1,4 +1,4 @@
-package com.ista.zhotel.model;
+package com.tefa.studentstayo.model;
 
 public interface Callback {
     void onEncabezadoObtenido(long idEncabezado);

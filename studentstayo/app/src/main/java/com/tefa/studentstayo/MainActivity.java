@@ -1,4 +1,4 @@
-package com.ista.zhotel;
+package com.tefa.studentstayo;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,17 +10,13 @@ import android.content.pm.ActivityInfo;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
-import android.view.animation.Animation;
 import android.view.animation.BounceInterpolator;
 import android.widget.Button;
-
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Button button = findViewById(R.id.button9);
@@ -49,11 +45,11 @@ public class MainActivity extends AppCompatActivity {
 
     }
     public void Registro(View view){
-        Intent registro = new Intent(this, Registrar.class);
+        Intent registro= new Intent(this, Registrar.class);
         startActivity(registro);
     }
     public void Iniciar(View view){
-        Intent registro1 = new Intent(this, Login.class);
-        startActivity(registro1);
+        Intent login= new Intent(this, Login.class);
+        startActivity(login);
     }
 }
