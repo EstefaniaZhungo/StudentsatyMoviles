@@ -6,4 +6,5 @@
     <color name="colorAccent">#8555EF</color>
     <color name="colorPrimary">#5B14EA</color>
     <color name="colorPrimaryDark">#D81B60</color>
+    <color name="color_button_pressed">#FF0000</color> <!-- Cambia el color según necesites -->
 </resources>
