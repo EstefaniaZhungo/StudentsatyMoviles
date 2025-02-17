@@ -60,7 +60,7 @@ public class Login extends AppCompatActivity {
                     Toast.makeText(Login.this, "Ingrese la contraseña", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                Log.d("Datos", emailUser + passwordUser);
+
                 getDatos(emailUser, passwordUser);
             }
         });
@@ -76,7 +76,7 @@ public class Login extends AppCompatActivity {
                     if (response.length() > 0) {
                         JSONObject jsonObjectCliente = response.getJSONObject(0);
                         if (contrasena.equals(jsonObjectCliente.getString("contrasena"))) {
-                            Intent intent = new Intent(getApplicationContext(), PantallaPrincipal.class);
+                            Intent intent = new Intent(Login.this, PantallaPrincipal.class);
                             startActivity(intent);
                             finish();
                         } else {
@@ -92,8 +92,10 @@ public class Login extends AppCompatActivity {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Log.d("ERROR DE CONEXIÓN", error.getMessage());
+                Log.d("ERROR DE CONEXIÓN", "Error: " + error.toString());
+                Toast.makeText(getApplicationContext(), "Error de conexión: " + error.toString(), Toast.LENGTH_LONG).show();
             }
+
         });
 
         Volley.newRequestQueue(this).add(jsonArrayRequest);

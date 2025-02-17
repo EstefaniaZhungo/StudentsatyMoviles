@@ -2,8 +2,8 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="background_light">#F5F5F5</color> <!-- Un color gris claro -->
-    <color name="primary">#086DFF</color> <!-- Color principal, puedes cambiarlo -->
-    <color name="color_button_pressed">#FF5733</color> <!-- Red color when pressed -->
-    <color name="color_button_normal">#FF9800</color>  <!-- Orange color when normal -->
+    <color name="colorAzul">#1976D2</color>
+    <color name="colorAccent">#8555EF</color>
+    <color name="colorPrimary">#5B14EA</color>
+    <color name="colorPrimaryDark">#D81B60</color>
 </resources>
