@@ -1,88 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F5F5F5">
+    android:background="#FFFDF9">
 
-    <!-- Logo -->
-    <ImageView
-        android:id="@+id/imageViewLogo"
-        android:layout_width="200dp"
-        android:layout_height="60dp"
-        android:contentDescription="Logo"
-        app:srcCompat="@drawable/logoprincipal"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="20dp" />
-
-    <!-- Lista de habitaciones -->
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerViewhabi"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        app:layout_constraintTop_toBottomOf="@id/imageViewLogo"
-        app:layout_constraintBottom_toTopOf="@id/bottomBar"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:padding="16dp"
-        android:clipToPadding="false"
-        android:overScrollMode="never" />
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
 
-    <!-- Barra de botones -->
-    <androidx.cardview.widget.CardView
-        android:id="@+id/bottomBar"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        app:cardCornerRadius="30dp"
-        app:cardElevation="8dp"
-        android:layout_margin="10dp"
-        android:backgroundTint="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="180dp"
+            android:layout_height="110dp"
+            app:srcCompat="@drawable/logoprincipal"
+            android:layout_marginTop="20dp" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="20dp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewhabi"
+            android:layout_width="match_parent"
+            android:layout_height="370dp"
+            android:layout_weight="1" />
 
         <LinearLayout
+            android:id="@+id/navigation_buttons"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:gravity="center">
+            android:padding="2dp"
+            android:background="@color/white"
+            android:elevation="5dp">
 
-            <com.google.android.material.button.MaterialButton
+            <Button
                 android:id="@+id/buttonPerfil"
-                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:backgroundTint="#00FFFFFF"
+                android:onClick="Perfil"
                 android:text="Perfil"
                 android:textColor="#121111"
                 app:icon="@drawable/icons8_user_24"
-                app:iconTint="#121111" />
+                app:iconTint="#090808" />
 
-            <com.google.android.material.button.MaterialButton
+            <Button
                 android:id="@+id/buttonCerrarSesion"
-                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:backgroundTint="#00FFFFFF"
                 android:text="Cerrar Sesión"
-                android:textColor="#E53935"
+                android:textColor="#090909"
                 app:icon="@drawable/icons8_logout_rounded_25"
-                app:iconTint="#E53935" />
+                app:iconTint="#0E0E0E" />
 
-            <com.google.android.material.button.MaterialButton
+            <Button
                 android:id="@+id/buttonServicios"
-                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:backgroundTint="#00FFFFFF"
                 android:text="Servicios"
                 android:textColor="#0B0A0A"
                 app:icon="@drawable/icons8_24h_25"
-                app:iconTint="#0B0A0A" />
+                app:iconTint="#131313" />
         </LinearLayout>
-    </androidx.cardview.widget.CardView>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+
+</RelativeLayout>
+
