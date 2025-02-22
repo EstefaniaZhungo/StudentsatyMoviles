@@ -14,84 +14,94 @@
 
         <ImageView
             android:id="@+id/imageView4"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            app:srcCompat="@drawable/logoprincipal" />
+            android:layout_width="180dp"
+            android:layout_height="110dp"
+            app:srcCompat="@drawable/logoprincipal"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="20dp" />
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="16dp" />
+
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="43dp"
-            android:gravity="center"
-            android:orientation="horizontal">
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/imageView4"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="20dp">
 
             <TextView
                 android:id="@+id/textView9"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:text="Seleccione su Habitacion"
+                android:layout_height="wrap_content"
+                android:text="Seleccione su Habitación"
                 android:textColor="#333333"
-            android:textSize="20sp" />
+                android:textSize="18sp"
+                android:fontFamily="sans-serif-medium"
+                android:paddingEnd="10dp" />
 
             <Spinner
                 android:id="@+id/spinner1"
-                android:layout_width="109dp"
-                android:layout_height="match_parent"
+                android:layout_width="150dp"
+                android:layout_height="40dp"
                 android:background="@drawable/spinner_border"
-            android:gravity="center"
-            tools:ignore="TouchTargetSizeCheck" />
+                android:padding="8dp"
+                android:gravity="center"
+                tools:ignore="TouchTargetSizeCheck" />
         </LinearLayout>
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="27dp" />
+            android:layout_height="20dp" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerViewhabi"
             android:layout_width="match_parent"
-            android:layout_height="231dp"
+            android:layout_height="802dp"
             android:layout_weight="1" />
 
+        <!-- Botones de navegación -->
         <LinearLayout
+            android:id="@+id/navigation_buttons"
             android:layout_width="match_parent"
-            android:layout_height="48dp"
-        android:gravity="center"
-        android:orientation="horizontal"
-        android:layout_marginTop="24dp">
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="2dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:background="@color/white"
+            android:elevation="5dp">
 
-        <Button
-            android:id="@+id/perfil"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:backgroundTint="#00FFFFFF"
-            android:onClick="Perfil"
-            android:text="Perfil"
-            android:textColor="#000000"
-            app:icon="@drawable/icons8_user_24"
-            app:iconTint="#000000" />
+            <Button
+                android:id="@+id/perfil"
+                android:layout_width="0dp"
+                android:layout_height="45dp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/white"
+                android:text="Perfil"
+                android:textColor="#333333"
+                android:textSize="16sp"
+                app:icon="@drawable/icons8_user_24"
+                app:iconTint="#333333" />
 
-        <Space
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1" />
+            <Space
+                android:layout_width="16dp"
+                android:layout_height="wrap_content" />
 
-        <Button
-            android:id="@+id/sesion"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:backgroundTint="#00FFFFFF"
-            android:onClick="Sesion"
-            android:text="Cerrar Sesión"
-            android:textColor="#100E0E"
-            app:icon="@drawable/icons8_logout_rounded_25"
-            app:iconTint="#F7000000" />
-    </LinearLayout>
+            <Button
+                android:id="@+id/sesion"
+                android:layout_width="0dp"
+                android:layout_height="45dp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/white"
+                android:text="Cerrar Sesión"
+                android:textColor="#D32F2F"
+                android:textSize="16sp"
+                app:icon="@drawable/icons8_logout_rounded_25"
+                app:iconTint="#D32F2F" />
+        </LinearLayout>
 </LinearLayout>
     </RelativeLayout>
 
