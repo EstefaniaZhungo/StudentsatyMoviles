@@ -38,6 +38,10 @@ public class PantallaPrincipal extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        // Obtener el correo desde el Intent
+        if (getIntent().hasExtra("correoUsuario")) {
+            correoUsuario = getIntent().getStringExtra("correoUsuario");
+        }
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pantalla_principal);
@@ -103,7 +107,7 @@ public class PantallaPrincipal extends AppCompatActivity {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(getApplicationContext(), "Tu mensaje aquí", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "", Toast.LENGTH_SHORT).show();
                 Toast.makeText(PantallaPrincipal.this, "Error al obtener datos", Toast.LENGTH_SHORT).show();
             }
         }

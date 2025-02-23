@@ -9,15 +9,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.Volley;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -77,6 +74,7 @@ public class Login extends AppCompatActivity {
                         JSONObject jsonObjectCliente = response.getJSONObject(0);
                         if (contrasena.equals(jsonObjectCliente.getString("contrasena"))) {
                             Intent intent = new Intent(Login.this, PantallaPrincipal.class);
+                            intent.putExtra("correoUsuario", usuario); // Enviar el correo
                             startActivity(intent);
                             finish();
                         } else {

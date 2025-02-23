@@ -4,9 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@android:color/white"
     android:gravity="center"
     android:orientation="vertical"
-    android:background="@android:color/white"
     android:padding="24dp"
     tools:context=".PantallaPerfilUsuario">
 
@@ -17,9 +17,22 @@
         android:layout_height="wrap_content"
         android:text="PERFIL"
         android:textAlignment="center"
+        android:textColor="#056688"
         android:textSize="48sp"
-        android:textStyle="bold"
-        android:textColor="#056688" />
+        android:textStyle="bold" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="30dp" />
+
+    <ImageView
+        android:id="@+id/imgPerfil"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_gravity="center"
+        android:contentDescription="Imagen de perfil"
+        android:scaleType="centerCrop"
+        android:src="@drawable/border_red" />
 
     <Space
         android:layout_width="match_parent"
@@ -30,8 +43,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="15dp"
-        app:boxBackgroundMode="filled"
         app:boxBackgroundColor="#F1F1F1"
+        app:boxBackgroundMode="filled"
         app:boxStrokeColor="#056688"
         app:hintAnimationEnabled="true">
 
@@ -40,10 +53,10 @@
             android:layout_width="match_parent"
             android:layout_height="56dp"
             android:hint="Teléfono"
-            android:textColor="#333333"
-            android:textColorHint="#888888"
+            android:inputType="phone"
             android:padding="12dp"
-            android:inputType="phone" />
+            android:textColor="#333333"
+            android:textColorHint="#888888" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Space
@@ -54,16 +67,16 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
         android:gravity="center"
-        android:orientation="horizontal"
-        android:layout_marginBottom="15dp">
+        android:orientation="horizontal">
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            app:boxBackgroundMode="filled"
             app:boxBackgroundColor="#F1F1F1"
+            app:boxBackgroundMode="filled"
             app:boxStrokeColor="#056688"
             app:hintAnimationEnabled="true">
 
@@ -72,19 +85,21 @@
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
                 android:hint="Nombre"
+                android:padding="12dp"
                 android:textColor="#333333"
-                android:textColorHint="#888888"
-                android:padding="12dp" />
+                android:textColorHint="#888888" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <Space android:layout_width="15dp" android:layout_height="0dp" />
+        <Space
+            android:layout_width="15dp"
+            android:layout_height="0dp" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            app:boxBackgroundMode="filled"
             app:boxBackgroundColor="#F1F1F1"
+            app:boxBackgroundMode="filled"
             app:boxStrokeColor="#056688"
             app:hintAnimationEnabled="true">
 
@@ -93,9 +108,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
                 android:hint="Segundo Nombre"
+                android:padding="12dp"
                 android:textColor="#333333"
-                android:textColorHint="#888888"
-                android:padding="12dp" />
+                android:textColorHint="#888888" />
         </com.google.android.material.textfield.TextInputLayout>
     </LinearLayout>
 
@@ -103,16 +118,16 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
         android:gravity="center"
-        android:orientation="horizontal"
-        android:layout_marginBottom="15dp">
+        android:orientation="horizontal">
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            app:boxBackgroundMode="filled"
             app:boxBackgroundColor="#F1F1F1"
+            app:boxBackgroundMode="filled"
             app:boxStrokeColor="#056688"
             app:hintAnimationEnabled="true">
 
@@ -121,19 +136,21 @@
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
                 android:hint="Apellido"
+                android:padding="12dp"
                 android:textColor="#333333"
-                android:textColorHint="#888888"
-                android:padding="12dp" />
+                android:textColorHint="#888888" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <Space android:layout_width="15dp" android:layout_height="0dp" />
+        <Space
+            android:layout_width="15dp"
+            android:layout_height="0dp" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            app:boxBackgroundMode="filled"
             app:boxBackgroundColor="#F1F1F1"
+            app:boxBackgroundMode="filled"
             app:boxStrokeColor="#056688"
             app:hintAnimationEnabled="true">
 
@@ -142,9 +159,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
                 android:hint="Segundo Apellido"
+                android:padding="12dp"
                 android:textColor="#333333"
-                android:textColorHint="#888888"
-                android:padding="12dp" />
+                android:textColorHint="#888888" />
         </com.google.android.material.textfield.TextInputLayout>
     </LinearLayout>
 
@@ -153,8 +170,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
-        app:boxBackgroundMode="filled"
         app:boxBackgroundColor="#F1F1F1"
+        app:boxBackgroundMode="filled"
         app:boxStrokeColor="#056688"
         app:hintAnimationEnabled="true">
 
@@ -163,10 +180,10 @@
             android:layout_width="match_parent"
             android:layout_height="56dp"
             android:hint="Contraseña"
-            android:textColor="#333333"
-            android:textColorHint="#888888"
+            android:inputType="textPassword"
             android:padding="12dp"
-            android:inputType="textPassword" />
+            android:textColor="#333333"
+            android:textColorHint="#888888" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <!-- Botón Actualizar -->
@@ -175,11 +192,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        app:backgroundTint="#056688"
-        app:cornerRadius="50dp"
         android:text="Actualizar"
         android:textColor="#FFFFFF"
         android:textSize="18sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        app:backgroundTint="#056688"
+        app:cornerRadius="50dp" />
 
 </LinearLayout>
