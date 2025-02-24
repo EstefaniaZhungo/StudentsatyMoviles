@@ -16,6 +16,12 @@ public class Reservas {
     public Long getIdReserva() {
         return idReserva;
     }
+
+    @Override
+    public String toString() {
+        return "Reserva ID: " + idReserva; // O cualquier otra información que quieras mostrar
+    }
+
     public void setIdReserva(Long idReserva) {
         this.idReserva = idReserva;
     }

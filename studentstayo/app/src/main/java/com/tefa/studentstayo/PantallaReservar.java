@@ -41,6 +41,7 @@ import com.tefa.studentstayo.model.Callback;
 import com.tefa.studentstayo.model.DetalleFactura;
 import com.tefa.studentstayo.model.EncabezadoCallBack;
 import com.tefa.studentstayo.model.EncabezadoFactura;
+import com.tefa.studentstayo.model.Habi;
 import com.tefa.studentstayo.model.Reservas;
 import com.google.gson.Gson;
 import android.widget.Toast;
@@ -51,6 +52,7 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.text.SimpleDateFormat;
 import java.time.format.DateTimeParseException;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Locale;
@@ -77,6 +79,7 @@ public class PantallaReservar extends AppCompatActivity {
     public static Bitmap decodedByte1;
     private AutoCompleteTextView spnPersonas;
     ImageView adaptarImagen;
+    static ArrayList<Reservas> reservas = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -119,7 +122,7 @@ public class PantallaReservar extends AppCompatActivity {
         });
 
         spnPersonas = findViewById(R.id.nroPersonas);
-        //adaptarImagen = findViewById(R.id.imagenBase); ESTE ES DE LA IMAGEN DE LA HABITACION
+        adaptarImagen = findViewById(R.id.imagenBase);
         adaptarImagen.setScaleType(ImageView.ScaleType.FIT_XY);
         adaptarImagen.setImageBitmap(decodedByte1);
         Integer[] datos = {1, 2, 3, 4};
@@ -138,7 +141,7 @@ public class PantallaReservar extends AppCompatActivity {
         txtFechaIn = findViewById(R.id.fechaInic);
         txtFechaFin = findViewById(R.id.fechafin);
         txtDias = findViewById(R.id.txtDias);
-        //txtprecio = findViewById(R.id.precioHabi); PRECIO DE LA HABITACION
+        txtprecio = findViewById(R.id.precioHabi);
         txtFechaIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

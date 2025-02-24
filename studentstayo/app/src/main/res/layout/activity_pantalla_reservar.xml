@@ -1,208 +1,208 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F7F7F7"
-    android:gravity="center"
-    android:orientation="vertical"
-    tools:context=".PantallaReservar"
-    android:padding="16dp">
+    android:background="#F7F7F7">
 
-    <!-- Header Section with Logo -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
         android:gravity="center"
-        android:orientation="horizontal"
-        android:paddingBottom="13dp">
+        tools:context=".PantallaReservar">
 
+        <!-- Logo -->
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="300dp"
-            android:layout_height="100dp"
-            android:layout_marginEnd="8dp"
+            android:layout_width="200dp"
+            android:layout_height="80dp"
+            android:layout_marginBottom="10dp"
             app:srcCompat="@drawable/logoprincipal"
             android:layout_gravity="center" />
 
-    </LinearLayout>
+        <!-- Imagen Base -->
+        <ImageView
+            android:id="@+id/imagenBase"
+            android:layout_width="300dp"
+            android:layout_height="130dp"
+            android:layout_marginBottom="10dp" />
 
-    <!-- Reservation Form -->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:orientation="vertical"
-        android:background="@drawable/rounded_background"
-        android:padding="16dp"
-        android:layout_marginBottom="24dp">
-
-        <!-- Title Text -->
-        <TextView
-            android:id="@+id/textView8"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="RESERVAR"
-            android:textAlignment="center"
-            android:textSize="22sp"
-            android:textColor="#333333"
-            android:textStyle="bold" />
-
-        <!-- Personas Dropdown -->
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/spnPersonas"
-            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp">
-
-            <AutoCompleteTextView
-                android:id="@+id/nroPersonas"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Número Personas"
-                android:inputType="text"
-                android:textColor="#333333"
-                android:textSize="16sp" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <!-- Fecha de Reserva -->
-        <TextView
-            android:id="@+id/textView12"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="FECHA DE RESERVA"
-            android:textColor="#333333"
-            android:textSize="16sp"
-            android:layout_marginTop="16dp" />
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            style="@style/Widget.Material3.TextInputLayout.OutlinedBox">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/fechaInic"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Fecha de Inicio"
-                android:focusable="false"
-                android:textSize="16sp" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <!-- Fecha Fin -->
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            style="@style/Widget.Material3.TextInputLayout.OutlinedBox">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/fechafin"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Fecha Fin"
-                android:focusable="false"
-                android:textSize="16sp" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <!-- Número de Días -->
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            style="@style/Widget.Material3.TextInputLayout.OutlinedBox">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/txtDias"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Número de Días"
-                android:focusable="false"
-                android:textSize="16sp" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <!-- Método de Pago -->
-        <TextView
-            android:id="@+id/textView15"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Método de Pago"
-            android:textAlignment="center"
-            android:textSize="18sp"
-            android:textColor="#333333"
-            android:textStyle="bold"
-            android:layout_marginTop="16dp" />
-
-        <!-- Payment Method Icons -->
+        <!-- Contenedor de la Reserva -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:orientation="horizontal"
-            android:layout_marginTop="8dp">
-
-            <ImageView
-                android:id="@+id/pgTarjeta"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                app:srcCompat="@drawable/icons8_visa_48" />
-
-            <ImageView
-                android:id="@+id/pgtransfer"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                app:srcCompat="@drawable/icons8_emoji_de_tarjeta_de_cr_dito_48"
-                android:layout_marginStart="16dp" />
-
-            <ImageView
-                android:id="@+id/pgEfectivo"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                app:srcCompat="@drawable/icons8_banco_48"
-                android:layout_marginStart="16dp" />
-        </LinearLayout>
-
-        <!-- Total a Pagar -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:orientation="horizontal"
-            android:layout_marginTop="16dp">
+            android:orientation="vertical"
+            android:background="@drawable/rounded_background"
+            android:padding="16dp"
+            android:layout_marginBottom="16dp">
 
             <TextView
-                android:id="@+id/txtTotal"
+                android:id="@+id/textView8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="RESERVAR"
+                android:textAlignment="center"
+                android:textSize="22sp"
+                android:textColor="#333333"
+                android:textStyle="bold" />
+
+            <!-- Número de Personas -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                style="@style/Widget.Material3.TextInputLayout.OutlinedBox">
+
+                <AutoCompleteTextView
+                    android:id="@+id/nroPersonas"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Número de Personas"
+                    android:textSize="16sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Fechas -->
+            <TextView
+                android:text="FECHA DE RESERVA"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="TOTAL A PAGAR"
+                android:textSize="16sp"
                 android:textColor="#333333"
+                android:layout_marginTop="16dp" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/Widget.Material3.TextInputLayout.OutlinedBox">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/fechaInic"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Fecha de Inicio"
+                    android:focusable="false"
+                    android:textSize="16sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/Widget.Material3.TextInputLayout.OutlinedBox">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/fechafin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Fecha Fin"
+                    android:focusable="false"
+                    android:textSize="16sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="66dp"
+                android:orientation="horizontal">
+
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/txtDias"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:focusable="false"
+                    android:hint="Número de Días"
+                    android:inputType="text"
+                    android:minHeight="48dp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Método de Pago -->
+            <TextView
+                android:text="MÉTODO DE PAGO"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
                 android:textSize="18sp"
+                android:textColor="#333333"
                 android:textStyle="bold"
-                android:layout_marginEnd="16dp" />
+                android:layout_marginTop="16dp" />
 
-            <TextView
-                android:id="@+id/txtTotalPago"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="0.00"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:layout_marginTop="8dp">
+
+                <ImageView
+                    android:id="@+id/pgTarjeta"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    app:srcCompat="@drawable/icons8_visa_48" />
+
+                <ImageView
+                    android:id="@+id/pgtransfer"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    app:srcCompat="@drawable/icons8_emoji_de_tarjeta_de_cr_dito_48"
+                    android:layout_marginStart="12dp" />
+
+                <ImageView
+                    android:id="@+id/pgEfectivo"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    app:srcCompat="@drawable/icons8_banco_48"
+                    android:layout_marginStart="12dp" />
+
+                <TextView
+                    android:id="@+id/precioHabi"
+                    android:layout_width="71dp"
+                    android:layout_height="51dp"
+                    android:layout_weight="1"
+                    android:gravity="center" />
+            </LinearLayout>
+
+            <!-- Total a Pagar -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:layout_marginTop="16dp">
+
+                <TextView
+                    android:id="@+id/txtTotal"
+                    android:layout_width="105dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="TOTAL A PAGAR"
+                    android:textColor="#121111"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/txtTotalPago"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0.00"
+                    android:textSize="18sp"
+                    android:textColor="#333333" />
+            </LinearLayout>
+
+            <!-- Botón Reservar -->
+            <Button
+                android:id="@+id/button10"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:text="RESERVAR"
+                android:textColor="#FFFFFF"
+                android:background="@drawable/button_background"
                 android:textSize="18sp"
-                android:textColor="#333333" />
+                android:layout_marginTop="24dp" />
+
         </LinearLayout>
-
-        <!-- Reserve Button -->
-        <Button
-            android:id="@+id/button10"
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:text="RESERVAR"
-            android:textColor="#FFFFFF"
-            android:background="@drawable/button_background"
-            android:textSize="18sp"
-            android:layout_marginTop="24dp" />
-
     </LinearLayout>
-
-</LinearLayout>
+</ScrollView>
