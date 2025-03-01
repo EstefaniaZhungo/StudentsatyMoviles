@@ -41,9 +41,9 @@
         style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Teléfono">
+        android:hint="Primer Nombre">
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/telefono"
+            android:id="@+id/nombre1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -52,9 +52,9 @@
         style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Nombre">
+        android:hint="Segundo Nombre">
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/nombre"
+            android:id="@+id/nombre2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -63,12 +63,24 @@
         style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Apellido">
+        android:hint="Apellido Paterno">
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/apellido"
+            android:id="@+id/apellido1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
     </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Apellido Materno">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/apellido2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </com.google.android.material.textfield.TextInputLayout>
+
 
     <com.google.android.material.textfield.TextInputLayout
         style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
@@ -82,6 +94,18 @@
             android:focusable="false"
             android:clickable="true" />
     </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Teléfono">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/telefono"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </com.google.android.material.textfield.TextInputLayout>
+
 
     <com.google.android.material.textfield.TextInputLayout
         style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
@@ -101,18 +125,16 @@
         android:layout_height="wrap_content"
         android:hint="Contraseña">
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/password"
+            android:id="@+id/contrasena"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPassword" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <!-- Espacio -->
     <Space
         android:layout_width="match_parent"
         android:layout_height="20dp" />
 
-    <!-- Botón Registrar -->
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button"
         android:layout_width="match_parent"
@@ -122,12 +144,10 @@
         style="@style/Widget.Material3.Button"
         app:cornerRadius="12dp" />
 
-    <!-- Espacio -->
     <Space
         android:layout_width="match_parent"
         android:layout_height="10dp" />
 
-    <!-- Enlace para iniciar sesión -->
     <TextView
         android:id="@+id/textViewRe"
         android:layout_width="wrap_content"
