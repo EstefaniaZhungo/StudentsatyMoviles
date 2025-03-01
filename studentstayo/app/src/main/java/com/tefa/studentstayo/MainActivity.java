@@ -15,6 +15,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED);
@@ -53,4 +54,5 @@ public class MainActivity extends AppCompatActivity {
         Intent login= new Intent(this, Login.class);
         startActivity(login);
     }
+
 }

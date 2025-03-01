@@ -5,11 +5,23 @@
     android:layout_height="match_parent"
     android:background="#FFFDF9">
 
+    <Button
+        android:id="@+id/buttonUbicaciones"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ubicaciones"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#007AFF"
+        android:layout_alignParentRight="true"
+        android:layout_margin="22dp" />
+
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_below="@id/buttonUbicaciones">
 
         <ImageView
             android:id="@+id/imageView4"
@@ -75,4 +87,5 @@
     </LinearLayout>
 
 </RelativeLayout>
+
 

@@ -9,7 +9,6 @@ import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.os.Handler;
-import android.util.Log;
 import android.view.View;
 import android.view.animation.BounceInterpolator;
 import android.widget.Button;
@@ -35,6 +34,7 @@ public class PantallaPrincipal extends AppCompatActivity {
     MyAdapterHabi adapter;
     static ArrayList<Habi> habitacion = new ArrayList<>();
     Button Servicios;
+    Button buttonMapa;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +45,7 @@ public class PantallaPrincipal extends AppCompatActivity {
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pantalla_principal);
+
         Button button1 = findViewById(R.id.buttonServicios);
         ObjectAnimator scaleX = ObjectAnimator.ofFloat(button1, "scaleX", 1.3f);
         ObjectAnimator scaleY = ObjectAnimator.ofFloat(button1, "scaleY", 1.3f);
@@ -58,6 +59,7 @@ public class PantallaPrincipal extends AppCompatActivity {
         scaleY.setInterpolator(new BounceInterpolator());
         scaleX.start();
         scaleY.start();
+
         Button button2 = findViewById(R.id.buttonPerfil);
         final Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
@@ -71,6 +73,7 @@ public class PantallaPrincipal extends AppCompatActivity {
                 handler.postDelayed(this, 5000);
             }
         }, 5000);
+
         inicio = findViewById(R.id.buttonCerrarSesion);
         inicio.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -88,6 +91,18 @@ public class PantallaPrincipal extends AppCompatActivity {
                 Iniciar(view);
             }
         });
+
+        // Corrección del error: Asignar correctamente el botón antes de usarlo
+        buttonMapa = findViewById(R.id.buttonUbicaciones);
+        buttonMapa.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Aquí puedes agregar la funcionalidad para abrir el mapa
+                Intent intent = new Intent(PantallaPrincipal.this, Mapa.class);
+                startActivity(intent);
+            }
+        });
+
         recyclerViewhabi = findViewById(R.id.recyclerViewhabi);
         recyclerViewhabi.setLayoutManager(new LinearLayoutManager(this));
         adapter = new MyAdapterHabi(this, habitacion);
@@ -97,35 +112,33 @@ public class PantallaPrincipal extends AppCompatActivity {
 
     private void getDatos() {
         habitacion.clear();
-        String url = Environment.BASE_URL + "/habitaciones";//endpoint.
+        String url = Environment.BASE_URL + "/habitaciones"; // Endpoint.
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(url, new Response.Listener<JSONArray>() {
             @Override
             public void onResponse(JSONArray response) {
                 pasarJson(response);
-
             }
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(getApplicationContext(), "", Toast.LENGTH_SHORT).show();
-                Toast.makeText(PantallaPrincipal.this, "Error al obtener datos", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Error al obtener datos", Toast.LENGTH_SHORT).show();
             }
-        }
-        );
+        });
         Volley.newRequestQueue(this).add(jsonArrayRequest);
     }
 
     private void pasarJson(JSONArray array) {
         for (int i = 0; i < array.length(); i++) {
-            JSONObject json = null;
+            JSONObject json;
             Habi habita = new Habi();
             try {
                 json = array.getJSONObject(i);
                 if (json.getString("estado").equals("Disponible")) {
-                    habita.setIdHabitaciones((long) json.getInt("idHabitaciones"));//como viene del API
+                    habita.setIdHabitaciones((long) json.getInt("idHabitaciones")); // Como viene del API
                     habita.setnHabitacion(json.getInt("nHabitacion"));
                     habita.setDescriphabi(json.getString("descriphabi"));
                     habita.setPrecio(json.getDouble("precio"));
+
                     String base64Image = json.getString("foto");
                     if (base64Image.startsWith("data:image/jpeg;base64,")) {
                         base64Image = base64Image.substring("data:image/jpeg;base64,".length());
