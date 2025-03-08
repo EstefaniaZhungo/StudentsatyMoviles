@@ -9,6 +9,8 @@ public class Habi {
     private String descriphabi;
     private String foto;
     private String estado;
+    private double latitud;
+    private double longitud;
 
     private String numeroHabitacion;
 
@@ -80,6 +82,24 @@ public class Habi {
     public void setEstado(String estado) {
         this.estado = estado;
     }
+
+    public double getLatitud() {
+        return latitud;
+    }
+
+    public void setLatitud(double latitud) {
+        this.latitud = latitud;
+    }
+
+    public double getLongitud() {
+        return longitud;
+    }
+
+    public void setLongitud(double longitud) {
+        this.longitud = longitud;
+    }
+
+
 }
 
 

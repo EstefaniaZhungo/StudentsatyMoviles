@@ -136,6 +136,7 @@ public class PantallaPrincipal extends AppCompatActivity {
                 if (json.getString("estado").equals("Disponible")) {
                     habita.setIdHabitaciones((long) json.getInt("idHabitaciones")); // Como viene del API
                     habita.setnHabitacion(json.getInt("nHabitacion"));
+                    habita.setEstado(json.getString("estado"));
                     habita.setDescriphabi(json.getString("descriphabi"));
                     habita.setPrecio(json.getDouble("precio"));
 

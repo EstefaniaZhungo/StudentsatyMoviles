@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -29,7 +28,8 @@
             android:id="@+id/imagenBase"
             android:layout_width="300dp"
             android:layout_height="130dp"
-            android:layout_marginBottom="10dp" />
+            android:layout_marginBottom="10dp"
+            android:layout_gravity="center"/>
 
         <!-- Contenedor de la Reserva -->
         <LinearLayout
@@ -38,7 +38,8 @@
             android:orientation="vertical"
             android:background="@drawable/rounded_background"
             android:padding="16dp"
-            android:layout_marginBottom="16dp">
+            android:layout_marginBottom="16dp"
+            android:elevation="4dp">
 
             <TextView
                 android:id="@+id/textView8"
@@ -48,21 +49,23 @@
                 android:textAlignment="center"
                 android:textSize="22sp"
                 android:textColor="#333333"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:layout_marginBottom="16dp"/>
 
             <!-- Número de Personas -->
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
-                style="@style/Widget.Material3.TextInputLayout.OutlinedBox">
+                style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                android:layout_marginBottom="12dp">
 
                 <AutoCompleteTextView
                     android:id="@+id/nroPersonas"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="34dp"
                     android:hint="Número de Personas"
-                    android:textSize="16sp" />
+                    android:textColor="#333333"
+                    android:textSize="15sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <!-- Fechas -->
@@ -74,10 +77,12 @@
                 android:textColor="#333333"
                 android:layout_marginTop="16dp" />
 
+            <!-- Fecha Inicio -->
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                style="@style/Widget.Material3.TextInputLayout.OutlinedBox">
+                style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                android:layout_marginBottom="12dp">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/fechaInic"
@@ -85,13 +90,16 @@
                     android:layout_height="wrap_content"
                     android:hint="Fecha de Inicio"
                     android:focusable="false"
-                    android:textSize="16sp" />
+                    android:textSize="15sp"
+                    android:textColor="#333333"/>
             </com.google.android.material.textfield.TextInputLayout>
 
+            <!-- Fecha Fin -->
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                style="@style/Widget.Material3.TextInputLayout.OutlinedBox">
+                style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                android:layout_marginBottom="12dp">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/fechafin"
@@ -99,24 +107,25 @@
                     android:layout_height="wrap_content"
                     android:hint="Fecha Fin"
                     android:focusable="false"
-                    android:textSize="16sp" />
+                    android:textSize="15sp"
+                    android:textColor="#333333"/>
             </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Número de Días -->
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
-                android:layout_height="66dp"
-                android:orientation="horizontal">
-
+                android:layout_height="wrap_content"
+                style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                android:layout_marginBottom="12dp">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/txtDias"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:ems="10"
-                    android:focusable="false"
                     android:hint="Número de Días"
-                    android:inputType="text"
-                    android:minHeight="48dp" />
+                    android:textSize="15sp"
+                    android:textColor="#333333"
+                    android:focusable="false"/>
             </com.google.android.material.textfield.TextInputLayout>
 
             <!-- Método de Pago -->
@@ -130,6 +139,7 @@
                 android:textStyle="bold"
                 android:layout_marginTop="16dp" />
 
+            <!-- Métodos de pago -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -141,28 +151,30 @@
                     android:id="@+id/pgTarjeta"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    app:srcCompat="@drawable/icons8_visa_48" />
+                    app:srcCompat="@drawable/icons8_visa_48"/>
 
                 <ImageView
                     android:id="@+id/pgtransfer"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     app:srcCompat="@drawable/icons8_emoji_de_tarjeta_de_cr_dito_48"
-                    android:layout_marginStart="12dp" />
+                    android:layout_marginStart="12dp"/>
 
                 <ImageView
                     android:id="@+id/pgEfectivo"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     app:srcCompat="@drawable/icons8_banco_48"
-                    android:layout_marginStart="12dp" />
+                    android:layout_marginStart="12dp"/>
 
                 <TextView
                     android:id="@+id/precioHabi"
                     android:layout_width="71dp"
                     android:layout_height="51dp"
                     android:layout_weight="1"
-                    android:gravity="center" />
+                    android:gravity="center"
+                    android:textSize="14sp"
+                    android:textColor="#333333"/>
             </LinearLayout>
 
             <!-- Total a Pagar -->
@@ -174,22 +186,22 @@
                 android:layout_marginTop="16dp">
 
                 <TextView
-                    android:id="@+id/txtTotal"
+                    android:id="@+id/txtTotalPago"
                     android:layout_width="105dp"
                     android:layout_height="match_parent"
                     android:gravity="center"
-                    android:text="TOTAL A PAGAR"
+                    android:text="TOTAL"
                     android:textColor="#121111"
                     android:textSize="16sp"
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/txtTotalPago"
+                    android:id="@+id/txtTotal"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="0.00"
                     android:textSize="18sp"
-                    android:textColor="#333333" />
+                    android:textColor="#333333"/>
             </LinearLayout>
 
             <!-- Botón Reservar -->
@@ -201,8 +213,9 @@
                 android:textColor="#FFFFFF"
                 android:background="@drawable/button_background"
                 android:textSize="18sp"
-                android:layout_marginTop="24dp" />
-
+                android:layout_marginTop="24dp"/>
         </LinearLayout>
     </LinearLayout>
 </ScrollView>
+
+

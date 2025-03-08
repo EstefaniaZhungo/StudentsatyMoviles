@@ -37,7 +37,7 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerViewhabi"
             android:layout_width="match_parent"
-            android:layout_height="370dp"
+            android:layout_height="490dp"
             android:layout_weight="1" />
 
         <LinearLayout
@@ -45,9 +45,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:padding="2dp"
+            android:padding="8dp"
             android:background="@color/white"
-            android:elevation="5dp">
+            android:elevation="3dp">
 
             <Button
                 android:id="@+id/buttonPerfil"
