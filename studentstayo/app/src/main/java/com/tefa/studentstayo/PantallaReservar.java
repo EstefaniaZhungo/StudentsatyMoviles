@@ -350,6 +350,7 @@ public class PantallaReservar extends AppCompatActivity {
                     miReserva.setIdPago(idPago);
                     miReserva.setIdCliente(cedula);
                     miReserva.setEstado("Pendiente");
+                    miReserva.setIdRecepcionista(1L);
                     miReserva.setnPersona(Integer.valueOf(personaRece.getText().toString()));
                     miReserva.setTotal(Double.valueOf(totalRece.getText().toString()));
                     realizarSolicitudPOST(Environment.BASE_URL+"/reservas", miReserva);

@@ -12,7 +12,6 @@ public class Reservas {
     private Integer dias;
     private Integer nPersona;
     private String estado;
-
     public Long getIdReserva() {
         return idReserva;
     }
