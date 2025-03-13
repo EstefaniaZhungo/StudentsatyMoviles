@@ -1,6 +1,7 @@
 package com.tefa.studentstayo;
 
 import androidx.appcompat.app.AppCompatActivity;
+
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
@@ -9,6 +10,7 @@ import android.util.Log;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import com.android.volley.*;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
@@ -17,12 +19,18 @@ import com.google.android.material.textfield.TextInputEditText;
 import com.google.gson.Gson;
 import com.tefa.studentstayo.model.Persona;
 import com.tefa.studentstayo.model.cliente;
+
 import org.json.JSONException;
 import org.json.JSONObject;
+
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.*;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Locale;
+import java.util.Map;
 
 public class Registrar extends AppCompatActivity {
 
@@ -47,11 +55,8 @@ public class Registrar extends AppCompatActivity {
 
         boton1.setOnClickListener(v -> {
             if (validarCampos()) {
+                // Se llama a guardarPersona(), y una vez exitosa, se encadena guardarClientes()
                 guardarPersona();
-                PantallaPrincipal.correoUsuario = emailText.getText().toString();
-                Toast.makeText(Registrar.this, "Registro exitoso", Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(getApplicationContext(), Login.class));
-                finish();
             }
         });
     }
@@ -132,6 +137,7 @@ public class Registrar extends AppCompatActivity {
         datePicker.show(getSupportFragmentManager(), "DATE_PICKER_TAG");
     }
 
+    // Primero se guarda la persona y, al tener éxito, se llama a guardarClientes()
     private void guardarPersona() {
         Persona persona = new Persona();
         persona.setCedula_persona(auxcedula.getText().toString());
@@ -142,37 +148,20 @@ public class Registrar extends AppCompatActivity {
         persona.setTelefono(auxtelefono.getText().toString());
         persona.setEdad(calcularEdad());
 
-        realizarSolicitudPOST(Environment.BASE_URL + "/personas", persona);
-        guardarClientes();
-    }
-
-    private void guardarClientes() {
-        cliente clienteNuevo = new cliente();
-        clienteNuevo.setContrasena(paswordText.getText().toString());
-        clienteNuevo.setUsuario(emailText.getText().toString());
-        clienteNuevo.setCedula_persona(auxcedula.getText().toString());
-
-        realizarSolicitudPOST(Environment.BASE_URL + "/clientes", clienteNuevo);
-    }
-
-    private <T> void realizarSolicitudPOST(String url, final T objeto) {
         RequestQueue queue = Volley.newRequestQueue(this);
         Gson gson = new Gson();
-        final String objetoJson = gson.toJson(objeto);
+        final String personaJson = gson.toJson(persona);
 
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
+        StringRequest requestPersona = new StringRequest(Request.Method.POST, Environment.BASE_URL + "/personas",
                 response -> {
-                    try {
-                        JSONObject jsonResponse = new JSONObject(response);
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                    }
+                    Log.d("TAG", "Persona creada correctamente: " + response);
+                    // Una vez creada la persona, se procede a guardar el cliente
+                    guardarClientes();
                 },
-                error -> Log.e("TAG", "Error en la solicitud: " + error.toString())) {
-
+                error -> Log.e("TAG", "Error en la solicitud de persona: " + error.toString())) {
             @Override
             public byte[] getBody() {
-                return objetoJson.getBytes();
+                return personaJson.getBytes();
             }
 
             @Override
@@ -182,7 +171,42 @@ public class Registrar extends AppCompatActivity {
                 return headers;
             }
         };
-        queue.add(stringRequest);
+        queue.add(requestPersona);
+    }
+
+    // Se guarda el cliente usando la misma cédula, y al tener éxito, se notifica al usuario y se redirige
+    private void guardarClientes() {
+        cliente clienteNuevo = new cliente();
+        clienteNuevo.setContrasena(paswordText.getText().toString());
+        clienteNuevo.setUsuario(emailText.getText().toString());
+        clienteNuevo.setCedula_persona(auxcedula.getText().toString());
+
+        RequestQueue queue = Volley.newRequestQueue(this);
+        Gson gson = new Gson();
+        final String clienteJson = gson.toJson(clienteNuevo);
+
+        StringRequest requestCliente = new StringRequest(Request.Method.POST, Environment.BASE_URL + "/clientes",
+                response -> {
+                    Log.d("TAG", "Cliente creado correctamente: " + response);
+                    PantallaPrincipal.correoUsuario = emailText.getText().toString();
+                    Toast.makeText(Registrar.this, "Registro exitoso", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(getApplicationContext(), Login.class));
+                    finish();
+                },
+                error -> Log.e("TAG", "Error en la solicitud de cliente: " + error.toString())) {
+            @Override
+            public byte[] getBody() {
+                return clienteJson.getBytes();
+            }
+
+            @Override
+            public Map<String, String> getHeaders() {
+                Map<String, String> headers = new HashMap<>();
+                headers.put("Content-Type", "application/json");
+                return headers;
+            }
+        };
+        queue.add(requestCliente);
     }
 
     private int calcularEdad() {

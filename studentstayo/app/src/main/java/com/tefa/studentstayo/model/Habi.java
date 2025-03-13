@@ -11,7 +11,7 @@ public class Habi {
     private String estado;
     private double latitud;
     private double longitud;
-
+    private String tituloAnuncio;
     private String numeroHabitacion;
 
     public Long getIdHabitaciones() {
@@ -99,7 +99,21 @@ public class Habi {
         this.longitud = longitud;
     }
 
+    public String getTituloAnuncio() {
+        return tituloAnuncio;
+    }
 
+    public void setTituloAnuncio(String tituloAnuncio) {
+        this.tituloAnuncio = tituloAnuncio;
+    }
+
+    public String getNumeroHabitacion() {
+        return numeroHabitacion;
+    }
+
+    public void setNumeroHabitacion(String numeroHabitacion) {
+        this.numeroHabitacion = numeroHabitacion;
+    }
 }
 
 

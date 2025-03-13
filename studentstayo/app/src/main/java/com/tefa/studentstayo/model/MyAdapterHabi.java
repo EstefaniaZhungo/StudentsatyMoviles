@@ -35,7 +35,7 @@ public class MyAdapterHabi extends RecyclerView.Adapter<MyAdapterHabi.MyViewHold
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         int numeroHabitacion = habis.get(position).getnHabitacion();
-        holder.titulo.setText(String.valueOf(numeroHabitacion));
+        holder.titulo.setText("Numero de Habitacion: "+ String.valueOf(numeroHabitacion));
         holder.descripcion.setText(habis.get(position).getDescriphabi());
         String base64Image = habis.get(position).getFoto();
         byte[] decodedString = Base64.decode(base64Image, Base64.DEFAULT);
